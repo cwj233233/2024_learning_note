@@ -89,3 +89,23 @@ General facilities required to program RTS（编写实时系统所需的要求�
 
 - RTS 是指整个实时系统，它包含硬件、软件和网络等多个组件，这些组件共同工作以满足实时约束。
 - RTOS 是RTS中的一个重要软件组件，它负责管理实时任务和资源，确保系统按时完成任务。
+
+---
+
+## RTOS使用的技术
+
+### 调度
+
+运行状态（runing），大多数任务大部分时间都处于阻塞（block）或就绪（ready）状态，因为通常每个 CPU 内核一次只能运行一个任务。就绪队列中的项数可能会有很大差异，具体取决于系统需要执行的任务数和系统使用的调度程序类型。在更简单的非抢占式但仍然多任务处理的系统上，任务必须将其在 CPU 上的时间让给其他任务，这可能导致就绪队列具有更多处于准备执行状态的整体任务（资源匮乏）。
+
+一些常见的**调度算法**：
+
+- Cooperative scheduling 合作调度
+- Preemptive scheduling 抢占式调度  
+    - Fixed-priority pre-emptive scheduling 固定优先级抢占式调度
+    - Fixed-Priority Non-preemptive Scheduling 固定优先级非抢占式调度
+    - Static-time scheduling 静态时间调度
+    - Round-robin scheduling 循环调度
+
+- Earliest Deadline First approach 最早的截止日期优先方法
+- Stochastic digraphs with multi-threaded graph traversal 具有多线程图遍历的随机二图
