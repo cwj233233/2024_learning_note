@@ -109,3 +109,12 @@ General facilities required to program RTS（编写实时系统所需的要求�
 
 - Earliest Deadline First approach 最早的截止日期优先方法
 - Stochastic digraphs with multi-threaded graph traversal 具有多线程图遍历的随机二图
+  
+### 任务间通信和资源共享
+<font color=#FF0000>我是红色</font>
+像Unix这样的多任务操作系统在实时任务方面很差。计划程序为计算机上需求最低的作业提供最高优先级，因此无法确保时间关键型作业能够访问足够的资源。多任务处理系统必须管理多个任务之间的共享数据和硬件资源。两个任务同时访问相同的特定数据或硬件资源通常是不安全的。     
+
+有三种常用方法可以解决此问题：  
+1. **临时屏蔽/禁用中断（）**
+2. **互斥**
+3. **消息传递**
